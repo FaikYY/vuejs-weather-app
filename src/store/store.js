@@ -29,7 +29,6 @@ export const store = new Vuex.Store({
             console.log(results)
             this.state.weather = results;
           });
-
     },
   },
 });
