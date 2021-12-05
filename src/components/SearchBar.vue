@@ -110,7 +110,7 @@ export default {
     margin: 0;
     width: 90%;
     position: absolute;
-    bottom: 5rem;
+    bottom: 2.5rem;
   }
 }
 </style>
