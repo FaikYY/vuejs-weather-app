@@ -9,7 +9,8 @@ export const store = new Vuex.Store({
     url_base: "https://api.openweathermap.org/data/2.5/",
     query: "default query",
     weather: {},
-    date: ""
+    date: "",
+    background_class: ""
   },
   mutations:{
     
@@ -29,6 +30,8 @@ export const store = new Vuex.Store({
             console.log(results)
             this.state.weather = results;
           });
+          
     },
+     
   },
 });

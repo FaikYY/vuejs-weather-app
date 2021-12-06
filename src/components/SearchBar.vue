@@ -16,7 +16,7 @@
     <input
       type="text"
       class="search-bar"
-      placeholder="Search..."
+      placeholder="Search a city..."
       v-model="query"
       @keypress.enter="fetchWeatherFromStore"
     />
@@ -105,6 +105,8 @@ export default {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+/* To place the searchbar to the bottom, use this */
+/* 
 @media only screen and (max-width: 600px) {
   .search-box .search-bar{
     margin: 0;
@@ -112,5 +114,5 @@ export default {
     position: absolute;
     bottom: 2.5rem;
   }
-}
+} */
 </style>

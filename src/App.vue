@@ -12,7 +12,9 @@
                                   |__/                                        
 -->
 <template>
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
+  <div 
+    id="app" 
+    :class="typeof weather.main != 'undefined' && checkWeatherForBackground">
     <main>
       <SearchBar />
       <WeatherInfo />
@@ -46,7 +48,31 @@ export default {
         return this.$store.state.weather;
       },
     },
-  }
+    checkWeatherForBackgroundFromStore(){
+      return this.$store.dispatch("checkWeatherForBackground")
+    },
+    checkWeatherForBackground(){
+      if(this.$store.state.weather.weather[0].main == 'Clear'){
+        console.log("Clear weather background")
+        return 'clear'
+      }
+      else if(this.$store.state.weather.weather[0].main == 'Clouds' && Math.round(this.$store.state.weather.main.temp) > 16){
+        console.log("Clouds weather background")
+        return 'clouds-warm'
+      }
+      else if(this.$store.state.weather.weather[0].main == 'Clouds' && Math.round(this.$store.state.weather.main.temp) < 16){
+        console.log("Clouds weather background")
+        return 'clouds-cold'
+      }
+      else if(this.$store.state.weather.weather[0].main == 'Snow'){
+        console.log("Snow weather background")
+        return 'snow'
+      }
+      else{
+        return ''
+      }
+    }
+  },
 }
 </script>
 
@@ -85,6 +111,21 @@ body {
   background-image: url('./assets/warm-bg.jpg');
 }
 
+#app.clouds-warm{
+  background-image: url('./assets/clouds-warm.jpg');
+}
+
+#app.clouds-cold{
+  background-image: url('./assets/clouds-cold.jpg');
+}
+
+#app.snow{
+  background-image: url('./assets/snow.jpg');
+}
+
+#app.clear{
+  background-image: url('./assets/clear.jpg');
+}
 main {
   min-height: 100vh;
   padding: 25px;
