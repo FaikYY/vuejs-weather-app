@@ -13,12 +13,20 @@
 -->
 <template>
   <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+    rel="stylesheet"
+  />
         <div class="location-box">
           <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
         </div>
 
         <div class="weather-box">
-          <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
+          <div class="temp">
+            {{ Math.round(weather.main.temp) }}°c
+            <p class="humidity"> <span class="fas fa-tint"></span> : %{{ weather.main.humidity }}</p>
+            <p class="pressure"><span class="fas fa-temperature-low"></span>: {{ weather.main.pressure }}</p>
+          </div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
       </div>
@@ -104,5 +112,11 @@ computed:{
   font-weight: 700;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.weather-box p{
+  margin: 1rem;
+  font-size: 2rem; 
+  text-align: left;
 }
 </style>

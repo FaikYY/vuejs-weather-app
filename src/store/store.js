@@ -17,17 +17,17 @@ export const store = new Vuex.Store({
   },
   actions: {
     fetchWeather() {
-        console.log('Enter pressed')
-        console.log('Query is ' + this.state.query)
+        // console.log('Enter pressed')
+        // console.log('Query is ' + this.state.query)
         fetch(
           `${this.state.url_base}weather?q=${this.state.query}&units=metric&APPID=${this.state.api_key}`
         )
           .then((res) => {
-            console.log(res)
+            // console.log(res)
             return res.json();
           })
           .then(results => {
-            console.log(results)
+            // console.log(results)
             this.state.weather = results;
           });
           

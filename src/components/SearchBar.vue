@@ -49,7 +49,7 @@ export default {
         return this.$store.query;
       },
       set(value) {
-        console.log(value);
+        // console.log(value);
         this.$store.state.query = value;
       },
     },
