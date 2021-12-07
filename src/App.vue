@@ -56,7 +56,7 @@ export default {
         console.log("Clear weather background")
         return 'clear'
       }
-      else if(this.$store.state.weather.weather[0].main == 'Clouds' && Math.round(this.$store.state.weather.main.temp) > 16){
+      else if(this.$store.state.weather.weather[0].main == 'Clouds' && Math.round(this.$store.state.weather.main.temp) >= 16){
         console.log("Clouds weather background")
         return 'clouds-warm'
       }
@@ -101,14 +101,10 @@ body {
 }
 
 #app {
-  background-image: url('./assets/cold-bg.jpg');
+  background-image: url('./assets/default.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
-}
-
-#app.warm {
-  background-image: url('./assets/warm-bg.jpg');
 }
 
 #app.clouds-warm{

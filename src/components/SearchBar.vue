@@ -105,7 +105,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
-/* To place the searchbar to the bottom, use this */
+/* To place the searchbar to the bottom on mobile, use this */
 /* 
 @media only screen and (max-width: 600px) {
   .search-box .search-bar{
