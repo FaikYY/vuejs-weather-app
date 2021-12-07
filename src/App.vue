@@ -140,8 +140,8 @@ main {
 #watermark {
   font-size: 1.5rem;
   position: fixed;
-  bottom: 50px;
-  right: 25px;
+  bottom: 35px;
+  right: 15px;
   opacity: 0.75;
   z-index: 99;
   color: rgb(225, 225, 225);
