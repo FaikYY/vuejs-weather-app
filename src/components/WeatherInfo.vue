@@ -24,8 +24,8 @@
         <div class="weather-box">
           <div class="temp">
             {{ Math.round(weather.main.temp) }}°c
-            <p class="humidity"> <span class="fas fa-tint"></span> : %{{ weather.main.humidity }}</p>
-            <p class="pressure"><span class="fas fa-temperature-low"></span>: {{ weather.main.pressure }}</p>
+            <p class="humidity"> <span class="fas fa-tint"></span> : {{ weather.main.humidity }}%</p>
+            <p class="pressure"><span class="fas fa-temperature-low"></span>: {{ weather.main.pressure }} Pa</p>
           </div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
@@ -95,7 +95,7 @@ computed:{
   display: inline-block;
   padding: 10px 25px;
   color: #FFF;
-  font-size: 102px;
+  font-size: 5rem;
   font-weight: 900;
 
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
@@ -108,7 +108,7 @@ computed:{
 
 .weather-box .weather {
   color: #FFF;
-  font-size: 48px;
+  font-size: 3em;
   font-weight: 700;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
@@ -118,5 +118,19 @@ computed:{
   margin: 1rem;
   font-size: 2rem; 
   text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  .weather-box p{
+    font-size: 1.5rem;
+  }
+
+  .weather-box .temp{
+    font-size: 4rem;
+  }
+
+  .weather-box .weather {
+  font-size: 2.5em;
+}
 }
 </style>
